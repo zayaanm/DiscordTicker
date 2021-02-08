@@ -13,8 +13,8 @@ bot.remove_command('help')
 @bot.event
 async def on_ready():
     print ("Ready When Your Are.")
-    print ("Im running " + bot.user.name)
-    print ("With the id " + bot.user.id)
+    #print ("Im running " + bot.user.name)
+    #print ("With the id " + bot.user.id)
     print ("---------------------------")
 
 @bot.command(passcontext = True)
