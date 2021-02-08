@@ -21,7 +21,7 @@ async def on_ready():
 async def help(ctx):
     embed = discord.Embed(title = "__COMMANDS_:", description = "Use !timer to check the time until the next Event (displayed in [days] [hours] [minutes] [seconds])")
     embed.set_footer(text = "Send a private message to Moderators for personal support")
-    await bot.ctx.send(embed = embed)
+    await ctx.send(embed = embed)
 
 @bot.command(pass_context = True)
 @commands.has_role("")
@@ -51,7 +51,7 @@ async def settimer(ctx, day = None, hour = None, mins = None, secs = None):
 @bot.command(pass_context = True)
 async def timer(ctx):
     embed = discord.Embed(title = "*Event Timer:", description = str(timedelta(seconds= time)))
-    await bot.ctx.send(embed = embed)
+    await ctx.send(embed = embed)
 
 #error handerling
 async def on_command_error(self, ctx, error):
