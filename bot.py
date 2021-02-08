@@ -82,4 +82,4 @@ async def on_command_error(self, ctx, error):
 
 
 
-bot.run("ODA4MDYxNjU0MTI5ODM2MDYz.YCBEDw.vuTFV6NCO3WG7AqhlaWArj_WbxM")
+bot.run("ODA4NDExMTg2NjM4NzQ5Njk2.YCGJlg.Sy1GGA70HO0N0rIEqOHLrbZ1C2k")
