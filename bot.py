@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import asyncio
 import time
-from datetime import datetime, timedelta
+import datetime
 
 
 bot = commands.Bot(command_prefix="!")
@@ -24,7 +24,6 @@ async def help(ctx):
     await ctx.send(embed = embed)
 
 @bot.command(pass_context = True)
-@commands.has_role("")
 async def settimer(ctx, day = None, hour = None, mins = None, secs = None):
     '''
     [days] [hours] [mins] [secs]
@@ -38,19 +37,19 @@ async def settimer(ctx, day = None, hour = None, mins = None, secs = None):
         time = (day * 86400) + (hour * 3600) + (mins * 60) + secs
         while time >= 0:
             time -= 1
-            await bot.change_presence(game=discord.Game(name = str(timedelta(seconds= time))[:-3]))
+            await bot.change_presence(activity=discord.Game(name = str(datetime.timedelta(seconds= time))[:-3]))
             await asyncio.sleep(1)
         embed = discord.Embed(title = "TIMER STOPPED_", description = "@everyone PREPARE FOR BATTLE")
-        await bot.ctx.send(embed = embed)
+        await ctx.send(embed = embed)
 
     else:
         embed = discord.Embed(title = "how to use__:", description = "!settimer [days] [hours] [mins] [secs]")
-        await bot.ctx.send(embed = embed)
+        await ctx.send(embed = embed)
 
 
 @bot.command(pass_context = True)
 async def timer(ctx):
-    embed = discord.Embed(title = "*Event Timer:", description = str(timedelta(seconds= time)))
+    embed = discord.Embed(title = "*Event Timer:", description = str(datetime.timedelta(seconds= time)))
     await ctx.send(embed = embed)
 
 #error handerling
