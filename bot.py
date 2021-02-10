@@ -37,7 +37,7 @@ async def settimer(ctx, day = None, hour = None, mins = None, secs = None):
         time = (day * 86400) + (hour * 3600) + (mins * 60) + secs
         while time >= 0:
             time -= 1
-            await bot.change_presence(activity=discord.Game(name = str(datetime.timedelta(seconds= time))[:-3]))
+            await bot.change_presence(activity=discord.Game(name = "3 days, 23:00"))
             await asyncio.sleep(1)
         embed = discord.Embed(title = "TIMER STOPPED_", description = "@everyone PREPARE FOR BATTLE")
         await ctx.send(embed = embed)
